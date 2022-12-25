@@ -1,0 +1,19 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block content %}
+<br>
+<br>
+    <div class="container text-center">
+    <h1>Мое портфолио</h1>
+    {% load static %}
+    <img src="{% static 'portfolio_app/vovan.jpg' %}" width="250">
+    <br><br>
+{% for model in models %}
+    <h2>{{ model.title }}</h2><br>
+    {{ model.description }}<br>
+    <img src="{{ model.image.url }}" width=150px><br>
+    <a href="{{ model.url }}">Ссылка</a>
+{% endfor %}
+<br>
+</div>
+{% endblock %}
